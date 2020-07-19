@@ -31,6 +31,11 @@ public class Test {
         //后序遍历
         binaryTree.afterShow();
 
+        System.out.println("==================删除节点==================");
+        //删除节点/子树
+        binaryTree.delete(5);
+        binaryTree.frontShow();
+
 
     }
 }

@@ -123,4 +123,30 @@ public class TreeNode {
         }
         return null;
     }
+
+    public void delete(int i) {
+        TreeNode parent = this;
+        //左节点
+        if (parent.leftNode != null && parent.leftNode.value == i) {
+            parent.leftNode = null;
+            return;
+        }
+        //右节点
+        if (parent.rightNode != null && parent.rightNode.value == i) {
+            parent.rightNode = null;
+            return;
+        }
+
+        //递归检查并删除左儿子
+        parent = leftNode;
+        if (parent != null) {
+            parent.delete(i);
+        }
+
+        //递归检查并删除右儿子
+        parent = rightNode;
+        if (parent != null) {
+            parent.delete(i);
+        }
+    }
 }

@@ -15,15 +15,21 @@ public class BinaryTree {
     }
 
     public void frontShow() {
-        root.frontShow();
+        if (root != null) {
+            root.frontShow();
+        }
     }
 
     public void midShow() {
-        root.midShow();
+        if (root != null) {
+            root.midShow();
+        }
     }
 
     public void afterShow() {
-        root.afterShow();
+        if (root != null) {
+            root.afterShow();
+        }
     }
 
     public List<Integer> frontList() {
@@ -32,5 +38,13 @@ public class BinaryTree {
 
     public TreeNode search(int i) {
         return root.search(i);
+    }
+
+    public void delete(int i) {
+        if (root.getValue() == i) {
+            root = null;
+        } else {
+            root.delete(i);
+        }
     }
 }
